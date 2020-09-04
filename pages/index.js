@@ -5,7 +5,11 @@ import gql from 'graphql-tag'
 
 const HELLO_QUERY = gql`
   query HelloQuery {
-    sayHello
+  reddit {
+    subreddit(name: "bboy"){
+      subscribers
+    }
+  }
   }
 `
 
@@ -16,7 +20,7 @@ const Home = () => {
   return (
     <Layout>
     <div className="hero">
-      <h1 className="title">{data.sayHello}</h1>
+      <h1 className="title">{data.reddit.subreddit.subscribers}</h1>
       <p className="description">
         To get started, edit <code>pages/index.js</code> and save to reload.
       </p>
