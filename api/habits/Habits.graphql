@@ -1,17 +1,17 @@
 type Habit {
-    _id: ID!
-    name: String!
+  _id: ID!
+  name: String!
 }
 
 input HabitInput {
-    _id: index
-    name: String!
+  _id: ID
+  name: String!
 }
 
 type Mutation {
-    addHabit(habit: HabitInput): Habit
+  addHabit(habit: HabitInput): Habit
 }
 
 type Query {
-    habits: [Habit]
+  habits: [Habit]
 }
