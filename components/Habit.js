@@ -3,7 +3,7 @@ import HabitButton from './HabbitButton';
 const colors = ['#718096', '#F56565', '#F6E05E', '#68D391', '#63B3ED'];
 
 const Habit = ({ habit, index }) => {
-  const dates = getLast5Days();
+  const dates = getLast7Days();
   return (
     <article>
       <h3 style={{ borderColor: colors[index] }}>{habit}</h3>
@@ -34,8 +34,8 @@ const Habit = ({ habit, index }) => {
   );
 };
 
-const getLast5Days = () => {
-  const dates = '01234'.split('').map(day => {
+const getLast7Days = () => {
+  const dates = '0123456'.split('').map(day => {
     const tempDate = new Date();
     tempDate.setDate(tempDate.getDate() - day);
     return tempDate;
